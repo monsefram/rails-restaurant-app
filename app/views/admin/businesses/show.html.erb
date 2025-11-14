@@ -1,0 +1,32 @@
+# Monsif ramhane
+
+<h1><%= @business.name %></h1>
+
+<p><%= @business.description %></p>
+<p><%= @business.site_web %></p>
+
+<h2>Menu :</h2>
+
+<% @business.menus.each do |menu| %>
+  <h3><%= menu.title %></h3>
+
+  <% if menu.menus.any? %>
+    <% menu.menus.each do |sub| %>
+      <h4><%= sub.title %></h4>
+      <ul>
+        <% sub.items.each do |item| %>
+          <li><%= item.name %> – <%= item.description %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <% if menu.items.any? %>
+    <ul>
+      <% menu.items.each do |item| %>
+        <li><%= item.name %> – <%= item.description %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Administration – Restaurants</h1>
+
+<ul>
+  <% @businesses.each do |b| %>
+    <li><%= link_to b.name, admin_business_path(b) %></li>
+  <% end %>
+</ul>

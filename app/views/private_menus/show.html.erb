@@ -1,0 +1,26 @@
+<!-- Monsif Ramhane - 2025-11-14 -->
+
+<h1>Restaurant privé : <%= @business.name %></h1>
+
+
+<p><%= @business.description %></p>
+<p><%= @business.phone %></p>
+<p><%= @business.site_web %></p>
+
+<hr>
+
+<h2>Menus</h2>
+
+<% @menus.each do |menu| %>
+  <h3><%= menu.title %></h3>
+
+  <ul>
+    <% menu.items.each do |item| %>
+      <li>
+        <strong><%= item.name %></strong> — <%= item.price %>$  
+        <br>
+        <%= item.description %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

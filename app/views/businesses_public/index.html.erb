@@ -1,0 +1,9 @@
+# monsif ramhane
+
+<h1>Bienvenue sur notre site</h1>
+
+<ul>
+  <% @businesses.each do |b| %>
+    <li><%= link_to b.name, business_path(b) %></li>
+  <% end %>
+</ul>

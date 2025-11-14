@@ -1,0 +1,15 @@
+<!-- monsif ramhane - 2025-11-14 -->
+
+<h1>Mes restaurants & menus</h1>
+
+<% if @businesses.any? %>
+  <ul>
+    <% @businesses.each do |b| %>
+      <li>
+        <%= link_to b.name, mesmenu_path(b) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Vous n'avez aucun restaurant associé à votre compte.</p>
+<% end %>

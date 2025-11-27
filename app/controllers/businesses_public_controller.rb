@@ -8,10 +8,12 @@ class BusinessesPublicController < ApplicationController
   def show
     @business = Business.find(params[:id])
 
+    include = { menus: { include: { menus: { include: :items } } } }
+
     respond_to do |format|
       format.html
-      format.json { render json: @business.to_json(include: { menus: { include: :items } }) }
-      format.xml  { render xml:  @business.to_xml(include: { menus: { include: :items } }) }
+      format.json { render :json => @business.to_json(include: include) }
+      format.xml  { render :xml => @business.to_json(include: include).xml()  }
     end
   end
 

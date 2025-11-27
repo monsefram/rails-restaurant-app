@@ -1,7 +1,6 @@
 # Monsif ramhane – 2025-11-13
 Rails.application.routes.draw do
-  get "private_menus/index"
-  get "private_menus/show"
+
   get "/mesmenus", to: "private_menus#index"
   get "/mesmenus/:id", to: "private_menus#show", as: :mesmenu
 
